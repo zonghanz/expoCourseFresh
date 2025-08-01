@@ -3,9 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={styles.view}
-    >
+    <View style={styles.view}>
       <Text>Breuhh</Text>
       <Link href="/login" style={styles.navButton}>Login Page</Link>
     </View>
