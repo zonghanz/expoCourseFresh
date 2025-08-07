@@ -1,10 +1,25 @@
-import { Stack } from "expo-router";
+import { Stack, useRouter } from "expo-router";
+import React, { useEffect } from "react";
+
+function RouteGuard({ children }: { children: React.ReactNode }) {
+  const isAuth = false;
+  const router = useRouter(); //use this whenever you want to redirect to different parts of the app
+
+  useEffect(() => { //to run immediately when this component is rendered
+    if (!isAuth) {
+      router.replace("/auth");
+    }
+  });
+
+  return <>{children}</>
+}
+
 export default function RootLayout() {
   return (
-    <>
+    <RouteGuard>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{headerShown: false}}/>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
-    </>
-    );
+    </RouteGuard>
+  );
 }
