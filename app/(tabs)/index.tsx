@@ -6,6 +6,7 @@ export default function Index() {
     <View style={styles.view}>
       <Text>Breuhh</Text>
       <Link href="/login" style={styles.navButton}>Login Page</Link>
+      <Link href="/auth" style={styles.navButton}>Auth Page</Link>
     </View>
   );
 }
@@ -17,6 +18,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
   },
   navButton: {
-    width:230, height:50, backgroundColor:"coral", borderRadius: 8, textAlign: "center"
+    width:100, height:20, backgroundColor:"coral", borderRadius: 8, textAlign:"center", marginTop:10
   }
-}) //23:26
+})
