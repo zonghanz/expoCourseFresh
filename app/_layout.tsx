@@ -5,9 +5,9 @@ function RouteGuard({ children }: { children: React.ReactNode }) {
   const isAuth = false;
   const router = useRouter(); //use this whenever you want to redirect to different parts of the app
 
-useEffect(() => { //to run immediately when this component is rendered
-  if (!isAuth) setTimeout(() => router.replace("/auth"), 0); 
-}, []);
+  useEffect(() => { //to run immediately when this component is rendered
+    if (!isAuth) setTimeout(() => router.replace("/auth"), 0); 
+  }, []);
 
   return <>{children}</>
 }
