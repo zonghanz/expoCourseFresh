@@ -38,7 +38,7 @@ export function AuthProvider({children}: {children: React.ReactNode}){
         }
     };
     
-    return ( //what syntax form is thiss
+    return (
         <AuthContext.Provider value={{ signUp, signIn }}> 
             {children}
         </AuthContext.Provider>

@@ -70,7 +70,8 @@ export default function AuthScreen(){
                  autoCapitalize="none" 
                  keyboardType="email-address" 
                  mode="outlined" 
-                 style={styles.input}
+                 style={styles.input} 
+                 secureTextEntry
                  onChangeText={setPassword}
                 />
 
