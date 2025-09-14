@@ -1,10 +1,24 @@
+import { DATABASE_ID, databases, HABITS_COLLECTION_ID } from "@/lib/appwrite";
 import { useAuth } from "@/lib/auth-context";
 import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-paper";
 
 export default function Index() {
-  const {signOut} = useAuth();
+  const {signOut, user} = useAuth();
+
+  const fetchHabits = async () => {
+    try{
+      const response = await databases.listDocuments(
+        DATABASE_ID, 
+        HABITS_COLLECTION_ID, 
+        [Query.equal("user_id", user>)] //for passing in conditions. Its an array as you can pass multiple
+      )
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
   return (
     <View style={styles.view}>
       <Text>Breuhh</Text>
